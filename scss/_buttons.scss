@@ -1,0 +1,42 @@
+@mixin buttons {
+  outline: none;
+  border: none;
+  cursor: pointer;
+}
+
+.add {
+  @include buttons;
+  width: 30px;
+  height: 30px;
+  align-self: center;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  box-shadow: 1px 1px 2px black;
+  &:active {
+    box-shadow: inset 1px 1px 1px grey;
+    opacity: 0.6;
+  }
+  &:hover{
+      opacity: 0.7;
+  }
+}
+
+.remove {
+  @include buttons;
+  width: 25px;
+  padding: 2px;
+  background: none;
+  height: 25px;
+  &:after {
+    transition: all 0.5s;
+    margin: auto;
+    color: wheat;
+    content: "X";
+  }
+  &:hover {
+    &:after {
+      color: red;
+    }
+  }
+}

@@ -1,0 +1,19 @@
+@media (max-width: 900px) {
+  .wrapper {
+    .hero {
+      height: 1300px;
+      flex-direction: column;
+      align-items: center;
+      .row {
+        justify-content: space-between;
+        flex-direction: column;
+        align-items: center;
+      }
+      .widget {
+        width: 80%;
+      }
+    }
+  }
+  .add {
+  }
+}

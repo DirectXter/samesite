@@ -1,3 +1,69 @@
+@-webkit-keyframes movingBorder {
+  0% {
+    background-position: 0px 0px, 300px 116px, 0px 150px, 216px 0px;
+  }
+  100% {
+    background-position: 300px 0px, 0px 116px, 0px 0px, 216px 150px;
+  }
+}
+
+@keyframes movingBorder {
+  0% {
+    background-position: 0px 0px, 300px 116px, 0px 150px, 216px 0px;
+  }
+  100% {
+    background-position: 300px 0px, 0px 116px, 0px 0px, 216px 150px;
+  }
+}
+
+.add {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  background-color: black;
+  color: white;
+  border-radius: 50%;
+  -webkit-box-shadow: 1px 1px 2px black;
+          box-shadow: 1px 1px 2px black;
+}
+
+.add:active {
+  -webkit-box-shadow: inset 1px 1px 1px grey;
+          box-shadow: inset 1px 1px 1px grey;
+  opacity: 0.6;
+}
+
+.add:hover {
+  opacity: 0.7;
+}
+
+.remove {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  width: 25px;
+  padding: 2px;
+  background: none;
+  height: 25px;
+}
+
+.remove:after {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  margin: auto;
+  color: wheat;
+  content: "X";
+}
+
+.remove:hover:after {
+  color: red;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -9,4 +75,132 @@ body {
   background-color: #f4f4f4;
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
+  width: 100%;
+}
+
+.wrapper {
+  -webkit-transition: 1s all;
+  transition: 1s all;
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+}
+
+.wrapper .hero {
+  height: inherit;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+}
+
+.wrapper .row {
+  margin: 5%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  height: 200px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+hr {
+  height: 1px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: 60%;
+  background-color: black;
+  -webkit-box-shadow: grey 1px 1px 1px;
+          box-shadow: grey 1px 1px 1px;
+  border: none;
+  opacity: 0.2;
+  margin: 2% 0 2% 0;
+}
+
+.widget {
+  padding: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  width: 30%;
+  height: 400px;
+  margin: auto auto auto auto;
+  -webkit-box-shadow: lightgray 1px 1px 25px 1px;
+          box-shadow: lightgray 1px 1px 25px 1px;
+}
+
+.card {
+  margin: auto;
+  padding: 3%;
+  width: 80%;
+  height: 70%;
+  background-color: #125488;
+  color: white;
+}
+
+select {
+  outline: none;
+  border: none;
+}
+
+::-ms-expand {
+  background: black;
+  color: red;
+  padding: 1em;
+}
+
+.hide {
+  display: none;
+}
+
+.hovered {
+  background-color: #d1d8e2;
+}
+
+@media (max-width: 900px) {
+  .wrapper .hero {
+    height: 1300px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .wrapper .hero .row {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .wrapper .hero .widget {
+    width: 80%;
+  }
 }
